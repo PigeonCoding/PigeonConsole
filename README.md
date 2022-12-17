@@ -4,6 +4,6 @@
 ## How to use
 create a `addons` folder in the root directory, cd into it and type:
 ```
-git submodule add https://github.com/PigeonCoding/EscapeIbnElHaitem
+git submodule add https://github.com/PigeonCoding/PigeonConsole
 ```
 
