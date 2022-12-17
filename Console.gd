@@ -76,8 +76,8 @@ func loggMsg(strr):
 		if i < textBuffer.size():
 			text[text.size() - i - 1].text = textBuffer[textBuffer.size() - i - 1]
 	
-	editInput.text = ""
-	currentInput = ""
+	#editInput.text = ""
+	#currentInput = ""
 	strr = ""
 
 func logg(strr):
