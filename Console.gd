@@ -135,7 +135,7 @@ func OnMouseEntered():
 
 func ClsTextBuffer():
 	textBuffer = []
-	for x in range(text.size()):
+	for _x in range(text.size()):
 		loggWithout("")
 
 func prntHelp():
