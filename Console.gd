@@ -32,24 +32,31 @@ func _ready():
 	
 	commands["help"][2] = commands.keys()
 	
+	var vbox = VBoxContainer.new()
+	vbox.rect_size = get_viewport().get_visible_rect().size
+	add_child(vbox)
+	var vbox2 = VBoxContainer.new()
+	vbox2.add_constant_override("separation", -0)
+	vbox.add_child(vbox2)
+	
 	for x in lineNum:
 		if x + 1 != lineNum:
 			var child = Label.new()
 			child.rect_size.x = get_viewport().get_visible_rect().size.x
-			child.rect_size.y = 20
-			child.rect_position.y = x * 20
+			#child.rect_size.y = 20
+			#child.rect_position.y = x * 20
 			child.add_stylebox_override("normal", my_style)
 			child.text = ""
-			add_child(child)
+			vbox2.add_child(child)
 			text.append(child)
 		else:
 			var child = LineEdit.new()
 			editInput = child
 			child.rect_size.x = get_viewport().get_visible_rect().size.x
-			child.rect_size.y = 20
-			child.rect_position.y = lineNum  * 20 - 20
+			#child.rect_size.y = 20
+			#child.rect_position.y = lineNum  * 20 - 20
 			child.connect("text_changed", self, "OnEditedLine")
-			add_child(child)
+			vbox2.add_child(child)
 	
 	editInput.release_focus()
 	focused = false
